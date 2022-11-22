@@ -1,15 +1,14 @@
 package com.example.assignment3;
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MenuInflater;
-import android.widget.Toast;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -17,8 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import java.util.Random;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,
         QuestionAmountManager.DialogClickListener {
@@ -200,15 +199,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ArrayList<Integer> questionNumbers = new ArrayList<>(numberOfQuestions);
         ArrayList<Question> questions = ((Manager) getApplication()).questionBank;
         ArrayList<Integer> colors = ((Manager) getApplication()).questionBackgroundColour;
-        ArrayList<Integer> rangeOfQuestions = new ArrayList<>(qBankAmount);
+        ArrayList<Integer> qScope = new ArrayList<>(qBankAmount);
 
         for (int a = 0; a < qBankAmount; a++) {
-            rangeOfQuestions.add(a);
+            qScope.add(a);
         }
         for (int a = 0; a < numberOfQuestions; a++) {
-            val = random.nextInt(rangeOfQuestions.size());
-            questionNumbers.add(rangeOfQuestions.get(val));
-            rangeOfQuestions.remove(val);
+            val = random.nextInt(qScope.size());
+            questionNumbers.add(qScope.get(val));
+            qScope.remove(val);
         }
 
         ((Manager) getApplication()).manager.questionFragManager =
@@ -242,39 +241,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setCancelable(false)
                 .setPositiveButton(getResources()
                                 .getString(R.string.optionSave)
-                        , new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                ArrayList<Integer> result = fileSystem.readRecords
-                                        (MainActivity.this);
-                                int newCorrectAnswers = result.get(defaultVal) + userScore;
-                                int newTotalQuestions = result.get(defaultVal_) + questionsAmount_;
+                        , (dialogInterface, i) -> {
+                            ArrayList<Integer> result = fileSystem.readRecords
+                                    (MainActivity.this);
+                            int updatedIsCorrect = result.get(defaultVal) + userScore;
+                            int updatedIsTotalQ = result.get(defaultVal_) + questionsAmount_;
 
-                                fileSystem.saveRecords(MainActivity.this,
-                                        newCorrectAnswers, newTotalQuestions);
-                                track = defaultVal;
-                                userScore = defaultVal;
+                            fileSystem.saveRecords(MainActivity.this,
+                                    updatedIsCorrect, updatedIsTotalQ);
+                            track = defaultVal;
+                            userScore = defaultVal;
 
-                                bankArr = createQuiz(questionsAmount_);
-                                manageFrag.beginTransaction().setTransition(FragmentTransaction.
-                                        TRANSIT_FRAGMENT_OPEN);
-                                manageFrag.beginTransaction().replace(R.id.fragContainerView,
-                                        bankArr.get(defaultVal)).commit();
-                            }
+                            bankArr = createQuiz(questionsAmount_);
+                            manageFrag.beginTransaction().setTransition(FragmentTransaction.
+                                    TRANSIT_FRAGMENT_OPEN);
+                            manageFrag.beginTransaction().replace(R.id.fragContainerView,
+                                    bankArr.get(defaultVal)).commit();
                         })
                 .setNegativeButton(getResources()
                                 .getString(R.string.optionIgnore)
-                        , new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                track = defaultVal;
-                                userScore = defaultVal;
-                                bankArr = createQuiz(questionsAmount_);
-                                manageFrag.beginTransaction().setTransition
-                                        (FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                                manageFrag.beginTransaction().replace
-                                        (R.id.fragContainerView, bankArr.get(defaultVal)).commit();
-                            }
+                        , (dialogInterface, i) -> {
+                            track = defaultVal;
+                            userScore = defaultVal;
+                            bankArr = createQuiz(questionsAmount_);
+                            manageFrag.beginTransaction().setTransition
+                                    (FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                            manageFrag.beginTransaction().replace
+                                    (R.id.fragContainerView, bankArr.get(defaultVal)).commit();
                         }).show();
     }
 }
