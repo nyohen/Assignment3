@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Quiz_Assignment</string>
+    <string name="isTrue">True</string>
+    <string name="isFalse">False</string>
+
+    <string name="action_Average">Get The Average</string>
+    <string name="action_selectQuestions">Select Number of Questions</string>
+    <string name="action_Reset">Reset the Saved Result</string>
+
+    <string name="question1">Sharks are mammals</string>
+    <string name="question2">South Africa has one capital</string>
+    <string name="question3">Greenland is the largest island in the world.</string>
+    <string name="question4">Vatican City is the smallest country in the world.</string>
+    <string name="question5">The two longest rivers in the world are the Mississippi and the Nile.</string>
+    <string name="question6">Infants have more bones than adults.</string>
+    <string name="question7">Toy Story was Pixar’s first movie.</string>
+    <string name="question8">The heart is the largest internal organ in the body.</string>
+    <string name="question9">Cheesecake comes from Italy.</string>
+    <string name="question10">Marvel published its first comic in October 1939.</string>
+
+    <string name="result">RESULT</string>
+
+    <string name="txt_Score">Your score: </string>
+    <string name="txt_OutOf"> out of </string>
+    <string name="optionSave">SAVE</string>
+    <string name="optionIgnore">IGNORE</string>
+
+    <string name="isCorrect">Correct</string>
+    <string name="isWrong">Wrong</string>
+    <string name="reset">The result has been reset</string>
+
+    <string name="optionOkay">OK</string>
+    <string name="optionCancel">CANCEL</string>
+
+    <string name="txt_InvalidNumber">Invalid input! please enter a number less than or equal</string>
+    <string name="txt_EnterNumOfQuestions">Enter the number of questions less than</string>
+    <string name="txt_Result">Your Correct answers / Total number of questions =  </string>
+    <string name="txt_slash">/</string>
+</resources>

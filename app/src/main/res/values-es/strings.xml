@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Cuestionario_Asignación</string>
+    <string name="isTrue">Verdadero</string>
+    <string name="isFalse">falso</string>
+
+    <string name="action_Average">Obtener el promedio</string>
+    <string name="action_selectQuestions">Seleccionar número de preguntas</string>
+    <string name="action_Reset">Restablecer el resultado guardado</string>
+
+    <string name="question1">Los tiburones son mamiferos</string>
+    <string name="question2">Sudáfrica tiene una capital</string>
+    <string name="question3">Groenlandia es la isla más grande del mundo.</string>
+    <string name="question4">La Ciudad del Vaticano es el país más pequeño del mundo.</string>
+    <string name="question5">Los dos ríos más largos del mundo son el Mississippi y el Nilo.</string>
+    <string name="question6">Los bebés tienen más huesos que los adultos.</string>
+    <string name="question7">Toy Story fue la primera película de Pixar.</string>
+    <string name="question8">El corazón es el órgano interno más grande del cuerpo.</string>
+    <string name="question9">La tarta de queso proviene de Italia.</string>
+    <string name="question10">Marvel publicó su primer cómic en octubre de 1939.</string>
+
+    <string name="result">RESULTADO</string>
+
+    <string name="txt_Score">Tu puntuación: </string>
+    <string name="txt_OutOf"> fuera de </string>
+    <string name="optionSave">AHORRAR</string>
+    <string name="optionIgnore">PASAR POR ALTO</string>
+
+    <string name="isCorrect">Correcto</string>
+    <string name="isWrong">Equivocado</string>
+    <string name="reset">El resultado ha sido reiniciado.</string>
+
+    <string name="optionOkay">OK</string>
+    <string name="optionCancel">CANCELAR</string>
+
+    <string name="txt_InvalidNumber">¡Entrada inválida! por favor ingrese un número menor o igual</string>
+    <string name="txt_EnterNumOfQuestions">Introduzca el número de preguntas menos de</string>
+    <string name="txt_Result">Tus respuestas correctas / Número total de preguntas =</string>
+    <string name="txt_slash">/</string>
+</resources>

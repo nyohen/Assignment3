@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.assignment3.MainActivity">
+
+    <item
+        android:id="@+id/action_Average"
+        android:title="@string/action_Average" />
+    <item
+        android:id="@+id/action_selectQuestions"
+        android:title="@string/action_selectQuestions"/>
+    <item
+        android:id="@+id/action_Reset"
+        android:title="@string/action_Reset"/>
+</menu>
